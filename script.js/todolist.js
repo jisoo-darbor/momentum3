@@ -12,9 +12,11 @@ function deleteTodo(e) {
   const li = e.target.parentElement;
   console.log(e);
   li.remove();
-  todosArray = todosArray.filter((todo) => todo.id !== li.id);
+  todosArray = todosArray.filter((todo) => todo.id !== parseInt(li.id));
+  console.log(todosArray);
   saveTodos();
 }
+
 function drawTodo(todo) {
   const li = document.createElement("li");
   li.id = todo.id;
